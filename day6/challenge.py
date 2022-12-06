@@ -48,8 +48,6 @@ with open('./input.txt', 'r') as f:
     data = f.read().strip('\n')
 
 
-
-
 def index_of_marker(word: str, length):
     start_idx = 0
     end_idx = 0
@@ -58,7 +56,7 @@ def index_of_marker(word: str, length):
         marker = word[start_idx:end_idx]
         unique_letters = set(marker)
         if len(unique_letters) != len(marker):
-            # duplicates
+            # duplicates, so increment the start index
             start_idx += 1
         if len(unique_letters) == length:
             return i + 1
